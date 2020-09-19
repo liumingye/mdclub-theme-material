@@ -14,10 +14,10 @@ import apiCatch from '~/utils/errorHandler';
 import stateDefault, { tabs } from './stateDefault';
 
 const TABNAME_QUESTIONS = 'questions';
-// const TABNAME_ARTICLES = 'articles';
+const TABNAME_ARTICLES = 'articles';
 
 let tab;
-let tabIndex = tabs.indexOf(TABNAME_QUESTIONS);
+let tabIndex = tabs.indexOf(TABNAME_ARTICLES);
 let scroll_position;
 const include = ['user', 'topics', 'is_following'];
 const per_page = 20;

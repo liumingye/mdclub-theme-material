@@ -1,4 +1,4 @@
-export const tabs = ['questions', 'articles'];
+export const tabs = ['articles', 'questions'];
 
 const state = {
   // 话题ID

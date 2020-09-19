@@ -13,14 +13,14 @@ export default ({ state, actions }) => (
     <Tab
       items={[
         {
-          name: '提问',
-          hash: 'questions',
-          count: state.topic ? state.topic.question_count : 0,
-        },
-        {
           name: '文章',
           hash: 'articles',
           count: state.topic ? state.topic.article_count : 0,
+        },
+        {
+          name: '提问',
+          hash: 'questions',
+          count: state.topic ? state.topic.question_count : 0,
         },
       ]}
     />
