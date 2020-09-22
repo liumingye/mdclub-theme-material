@@ -52,7 +52,7 @@ body.mdui-loaded .mdui-drawer {
     z-index: auto;
     // custom end
 
-    width: @drawer-width-md;
+    width: @drawer-width-xs;
     max-width: none;
 
     // 隐藏时不显示阴影
@@ -115,7 +115,7 @@ body.mdui-loaded .mdui-drawer {
 }
 
 @media (min-width: @screen-md-min) {
-  ._drawer_close(@drawer-width-md);
+  ._drawer_close(@drawer-width-xs);
 }
 
 /* 强制显示抽屉栏 */
@@ -127,11 +127,11 @@ body.mdui-loaded .mdui-drawer {
 @media (min-width: @screen-md-min) {
   /* 使该类所在元素获得 padding-left 或 padding-right，避免被抽屉栏覆盖住页面 */
   .mdui-drawer-body-left {
-    padding-left: @drawer-width-md;
+    padding-left: @drawer-width-xs;
   }
 
   /* .mdui-drawer-body-right {
-    padding-right: @drawer-width-md;
+    padding-right: @drawer-width-xs;
   } */
 
   /* PC 上默认有上边距 */

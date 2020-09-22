@@ -1,4 +1,4 @@
-export const tabs = ['questions', 'answers', 'articles'];
+export const tabs = ['articles', 'questions', 'answers'];
 
 const state = {
   // 被访问者的用户信息

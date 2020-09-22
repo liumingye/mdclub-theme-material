@@ -32,7 +32,7 @@ const TABNAME_ARTICLES = 'articles';
 // const TABNAME_ANSWERS = 'answers';
 
 let tab;
-let tabIndex = tabs.indexOf(TABNAME_QUESTIONS);
+let tabIndex = tabs.indexOf(TABNAME_ARTICLES);
 let scroll_position;
 const per_page = 20;
 

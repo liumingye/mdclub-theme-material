@@ -17,6 +17,11 @@ export default ({ state, actions }) => (
     <Tab
       items={[
         {
+          name: '文章',
+          hash: 'articles',
+          count: state.interviewee ? state.interviewee.article_count : 0,
+        },
+        {
           name: '提问',
           hash: 'questions',
           count: state.interviewee ? state.interviewee.question_count : 0,
@@ -25,11 +30,6 @@ export default ({ state, actions }) => (
           name: '回答',
           hash: 'answers',
           count: state.interviewee ? state.interviewee.answer_count : 0,
-        },
-        {
-          name: '文章',
-          hash: 'articles',
-          count: state.interviewee ? state.interviewee.article_count : 0,
         },
       ]}
     />

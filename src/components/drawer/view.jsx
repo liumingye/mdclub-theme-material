@@ -91,6 +91,7 @@ export default ({ user, interviewee }) => (
         {/* <Item url="/inbox" icon="mail" title="私信" active={isPathInbox()} /> */}
       </If>
     </div>
+    <div class="mdui-divider" />
     <div class="copyright">
       <If condition={site_icp_beian}>
         <p>
@@ -110,7 +111,7 @@ export default ({ user, interviewee }) => (
         </p>
       </If>
       <p>
-        © {new Date().getFullYear()} {site_name}
+        © 2015-{new Date().getFullYear()} {site_name}
       </p>
       <p>
         Powered by{' '}

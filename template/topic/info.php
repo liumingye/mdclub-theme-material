@@ -62,7 +62,7 @@ $meta_title = $topic['name'];
         </a>
         <div class="mdui-tab-indicator" style="left: 0px; width: 160px;"></div>
       </div>
-      <div id="questions" style="">
+      <div id="questions">
         <div class="mc-list-header">
           <div class="title">共 <?= $topic['question_count'] ?> 个提问</div>
           <button class="mdui-btn mdui-btn-dense">
