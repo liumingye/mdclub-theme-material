@@ -127,28 +127,36 @@ export default ({ notification, actions }) => {
 
   switch (notification.type) {
     case 'question_answered':
-      return (
-        <Item>
-          <Title>
-            <UserLink /> 回答了你的提问 <QuestionLink />
-          </Title>
-          <Content
-            content={notification.relationships.answer.content_summary}
-          />
-        </Item>
-      );
+      if (notification.relationships.answer && notification.relationships.answer.content_summary) {
+        return (
+          <Item>
+            <Title>
+              <UserLink /> 回答了你的提问 <QuestionLink />
+            </Title>
+            <Content
+              content={notification.relationships.answer.content_summary}
+            />
+          </Item>
+        );
+      }else{
+        return;
+      }
 
     case 'question_commented':
-      return (
-        <Item>
-          <Title>
-            <UserLink /> 评论了你的提问 <QuestionLink />
-          </Title>
-          <Content
-            content={notification.relationships.comment.content_summary}
-          />
-        </Item>
-      );
+      if (notification.relationships.comment && notification.relationships.comment.content_summary) {
+        return (
+          <Item>
+            <Title>
+              <UserLink /> 评论了你的提问 <QuestionLink />
+            </Title>
+            <Content
+              content={notification.relationships.comment.content_summary}
+            />
+          </Item>
+        );
+      }else{
+        return;
+      }
 
     case 'question_deleted':
       return (
@@ -165,16 +173,20 @@ export default ({ notification, actions }) => {
       );
 
     case 'article_commented':
-      return (
-        <Item>
-          <Title>
-            <UserLink /> 评论了你的文章 <ArticleLink />
-          </Title>
-          <Content
-            content={notification.relationships.comment.content_summary}
-          />
-        </Item>
-      );
+      if (notification.relationships.comment && notification.relationships.comment.content_summary) {
+        return (
+          <Item>
+            <Title>
+              <UserLink /> 评论了你的文章 <ArticleLink />
+            </Title>
+            <Content
+              content={notification.relationships.comment.content_summary}
+            />
+          </Item>
+        );
+      }else{
+        return;
+      }
 
     case 'article_deleted':
       return (
@@ -191,16 +203,20 @@ export default ({ notification, actions }) => {
       );
 
     case 'answer_commented':
-      return (
-        <Item>
-          <Title>
-            <UserLink /> 评论了你在提问 <QuestionLink /> 中的回答
-          </Title>
-          <Content
-            content={notification.relationships.comment.content_summary}
-          />
-        </Item>
-      );
+      if (notification.relationships.comment && notification.relationships.comment.content_summary) {
+        return (
+          <Item>
+            <Title>
+              <UserLink /> 评论了你在提问 <QuestionLink /> 中的回答
+            </Title>
+            <Content
+              content={notification.relationships.comment.content_summary}
+            />
+          </Item>
+        );
+      }else{
+        return;
+      }
 
     case 'answer_deleted':
       return (
