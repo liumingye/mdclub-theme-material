@@ -11,7 +11,7 @@ const { outputFolder, resolve } = require('./config');
 
 const prodConfig = merge.smart(commonConfig, {
   mode: 'production',
-  devtool: 'source-map',
+  // devtool: 'source-map',
   optimization: {
     minimize: true,
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],

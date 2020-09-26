@@ -1,6 +1,5 @@
 <?php include dirname(__FILE__) . "/functions.php"; ?>
 <?php include dirname(__FILE__) . "/public/header.php"; ?>
-
 <?php
 $user_id = get_user_id();
 
@@ -39,7 +38,6 @@ $articles_popular = get_articles([
  'order' => '-vote_count',
 ]);
 ?>
-
 <?php if (!$user_id): ?>
   <div id="page-index" class="mdui-container">
     <a class="header mdui-ripple" href="<?= get_root_url() ?>/topics#recommended">
@@ -143,7 +141,6 @@ $articles_popular = get_articles([
     </div>
   </div>
 <?php endif; ?>
-
 <script>
   window.G_INDEX_TOPICS = <?= json_encode($topics_recommended) ?>;
   window.G_INDEX_QUESTIONS_RECENT = <?= json_encode($questions_recent) ?>;
@@ -151,5 +148,4 @@ $articles_popular = get_articles([
   window.G_INDEX_ARTICLES_RECENT = <?= json_encode($articles_recent) ?>;
   window.G_INDEX_ARTICLES_POPULAR = <?= json_encode($articles_popular) ?>;
 </script>
-
 <?php include dirname(__FILE__) . "/public/footer.php"; ?>

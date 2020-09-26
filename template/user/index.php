@@ -1,5 +1,4 @@
 <?php include dirname(__FILE__) . "/../functions.php"; ?>
-
 <?php
 $userId = get_user_id();
 $include = ['is_following', 'is_me'];
@@ -22,9 +21,7 @@ $users_followers = $userId ? get_followers($userId, [
 
 $meta_title = '用户列表';
 ?>
-
 <?php include dirname(__FILE__) . "/../public/header.php"; ?>
-
 <?php if (!$userId): ?>
   <div id="page-users" class="mdui-container">
     <div id="recommended">
@@ -57,11 +54,9 @@ $meta_title = '用户列表';
     </div>
   </div>
 <?php endif; ?>
-
 <script>
   window.G_USERS_FOLLOWEES = <?= $userId ? json_encode($users_followees) : 'null' ?>;
   window.G_USERS_FOLLOWERS = <?= $userId ? json_encode($users_followers) : 'null' ?>;
   window.G_USERS_RECOMMENDED = <?= json_encode($users_recommended) ?>;
 </script>
-
 <?php include dirname(__FILE__) . "/../public/footer.php"; ?>

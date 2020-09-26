@@ -1,5 +1,4 @@
 <?php include dirname(__FILE__) . "/../functions.php"; ?>
-
 <?php
 $article_id = get_route()->getArgument('article_id');
 
@@ -17,9 +16,7 @@ $comments['data'] = comments_transformer($comments['data']);
 
 $meta_title = $article['title'];
 ?>
-
 <?php include dirname(__FILE__) . "/../public/header.php"; ?>
-
 <?php if (!get_user_id()) : ?>
   <div id="page-article" class="mdui-container">
     <div class="mc-nav">
@@ -72,10 +69,8 @@ $meta_title = $article['title'];
     </div>
   </div>
 <?php endif; ?>
-
 <script>
   window.G_ARTICLE = <?= json_encode($article) ?>;
   window.G_COMMENTS = <?= json_encode($comments) ?>;
 </script>
-
 <?php include dirname(__FILE__) . "/../public/footer.php"; ?>

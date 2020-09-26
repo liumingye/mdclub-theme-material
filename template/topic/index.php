@@ -1,5 +1,4 @@
 <?php include dirname(__FILE__) . "/../functions.php"; ?>
-
 <?php
 $user_id = get_user_id();
 
@@ -18,9 +17,7 @@ $topics_following = $user_id ? get_following_topics($user_id, [
 
 $meta_title = '话题列表';
 ?>
-
 <?php include dirname(__FILE__) . "/../public/header.php"; ?>
-
 <?php if (!$user_id): ?>
   <div id="page-topics" class="mdui-container">
     <div id="recommended">
@@ -45,10 +42,8 @@ $meta_title = '话题列表';
     </div>
   </div>
 <?php endif; ?>
-
 <script>
   window.G_TOPICS_FOLLOWING = <?= $user_id ? json_encode($topics_following) : 'null' ?>;
   window.G_TOPICS_RECOMMENDED = <?= json_encode($topics_recommended) ?>;
 </script>
-
 <?php include dirname(__FILE__) . "/../public/footer.php"; ?>

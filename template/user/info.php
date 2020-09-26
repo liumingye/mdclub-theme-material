@@ -1,5 +1,4 @@
 <?php include dirname(__FILE__) . "/../functions.php"; ?>
-
 <?php
 // 当前访问的用户信息
 $user_id = get_route()->getArgument('user_id');
@@ -31,9 +30,7 @@ $answers = get_answers([
 
 $meta_title = $user['username'];
 ?>
-
 <?php include dirname(__FILE__) . "/../public/header.php"; ?>
-
 <?php if (!get_user_id()): ?>
   <div id="page-user" class="mdui-container">
     <div class="user mdui-card mdui-card-shadow">
@@ -137,12 +134,10 @@ $meta_title = $user['username'];
     </div>
   </div>
 <?php endif; ?>
-
 <script>
   window.G_INTERVIEWEE = <?= json_encode($user) ?>;
   window.G_USER_QUESTIONS = <?= json_encode($questions) ?>;
   window.G_USER_ARTICLES = <?= json_encode($articles) ?>;
   window.G_USER_ANSWERS = <?= json_encode($answers) ?>;
 </script>
-
 <?php include dirname(__FILE__) . "/../public/footer.php"; ?>

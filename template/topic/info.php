@@ -1,16 +1,17 @@
 <?php include dirname(__FILE__) . "/../functions.php"; ?>
-
 <?php
 $topic_id = get_route()->getArgument('topic_id');
 $topic = get_topic($topic_id, ['include' => ['is_following']]);
 
 $questions = get_questions([
+  'topic_id' => $topic_id,
   'include' => ['user', 'topics', 'is_following'],
   'per_page' => 20,
   'order' => '-update_time'
 ]);
 
 $articles = get_articles([
+  'topic_id' => $topic_id,
   'include' => ['user', 'topics', 'is_following'],
   'per_page' => 20,
   'order' => '-update_time'
@@ -18,9 +19,7 @@ $articles = get_articles([
 
 $meta_title = $topic['name'];
 ?>
-
 <?php include dirname(__FILE__) . "/../public/header.php"; ?>
-
 <?php if (!get_user_id()): ?>
   <div id="page-topic" class="mdui-container">
     <div class="mc-nav">
@@ -117,11 +116,9 @@ $meta_title = $topic['name'];
     </div>
   </div>
 <?php endif; ?>
-
 <script>
   window.G_TOPIC = <?= json_encode($topic) ?>;
   window.G_TOPIC_QUESTIONS = <?= json_encode($questions) ?>;
   window.G_TOPIC_ARTICLES = <?= json_encode($articles) ?>;
 </script>
-
 <?php include dirname(__FILE__) . "/../public/footer.php"; ?>

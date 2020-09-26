@@ -1,5 +1,4 @@
 <?php include dirname(__FILE__) . "/../functions.php"; ?>
-
 <?php
 $question_id = get_route()->getArgument('question_id');
 
@@ -28,9 +27,7 @@ if ($answer_id) {
 
 $meta_title = $question['title'];
 ?>
-
 <?php include dirname(__FILE__) . "/../public/header.php"; ?>
-
 <?php if (!get_user_id()) : ?>
   <div id="page-question" class="mdui-container">
     <div class="mc-nav">
@@ -120,15 +117,12 @@ $meta_title = $question['title'];
     <?php endif; ?>
   </div>
 <?php endif; ?>
-
 <script>
   window.G_QUESTION = <?= json_encode($question) ?>;
-
   <?php if ($answer_id): ?>
   window.G_ANSWER = <?= json_encode($answer) ?>;
   <?php else: ?>
   window.G_QUESTION_ANSWERS = <?= json_encode($answers) ?>;
   <?php endif; ?>
 </script>
-
 <?php include dirname(__FILE__) . "/../public/footer.php"; ?>

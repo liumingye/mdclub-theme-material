@@ -1,5 +1,4 @@
 <?php include dirname(__FILE__) . "/../functions.php"; ?>
-
 <?php
 $userId = get_user_id();
 $include = ['user', 'topics', 'is_following'];
@@ -23,9 +22,7 @@ $questions_following = $userId ? get_following_questions($userId, [
 
 $meta_title = '提问列表';
 ?>
-
 <?php include dirname(__FILE__) . "/../public/header.php"; ?>
-
 <?php if (!$userId): ?>
   <div id="page-questions" class="mdui-container">
     <div id="recent">
@@ -44,7 +41,7 @@ $meta_title = '提问列表';
               </div>
             </div>
           </a>
-         <?php endforeach; ?>
+        <?php endforeach; ?>
       </div>
       <div class="mc-loaded mdui-hidden">已加载完所有数据</div>
     </div>
@@ -54,11 +51,9 @@ $meta_title = '提问列表';
     </button>
   </div>
 <?php endif; ?>
-
 <script>
   window.G_QUESTIONS_RECENT = <?= json_encode($questions_recent) ?>;
   window.G_QUESTIONS_POPULAR = <?= json_encode($questions_popular) ?>;
   window.G_QUESTIONS_FOLLOWING = <?= $userId ? json_encode($questions_following) : 'null' ?>;
 </script>
-
 <?php include dirname(__FILE__) . "/../public/footer.php"; ?>

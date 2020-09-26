@@ -24,8 +24,8 @@ export default ({ topic, loading, actions }) => (
             onupdate={summaryText(topic.name)}
           />
           <div class="meta mdui-text-color-theme-secondary">
-            <span>{topic.question_count} 个提问</span>
             <span>{topic.article_count} 篇文章</span>
+            <span>{topic.question_count} 个提问</span>
           </div>
           <div
             class="description mdui-text-color-theme-secondary"

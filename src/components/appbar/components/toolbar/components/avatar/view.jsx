@@ -57,7 +57,7 @@ const Popover = ({ user }) => (
       <If condition={user.user_id === 1}>
         <PopoverBottomButton
           onClick={() => {
-            window.location.href = fullPath('/admin');
+            window.open(fullPath('/admin'));
             menu.close();
           }}
           text="管理后台"

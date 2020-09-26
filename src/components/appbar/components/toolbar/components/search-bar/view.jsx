@@ -35,6 +35,9 @@ const onBack = (e) => {
 };
 
 const getFormAction = (keyword) => {
+
+  return window.G_ROOT + `/search/${keyword}`;
+
   const query = `site:${window.location.host}%20${keyword}`;
 
   if (window.G_OPTIONS.search_type === 'third') {

@@ -1,5 +1,4 @@
 <?php include dirname(__FILE__) . "/../functions.php"; ?>
-
 <?php
 $userId = get_user_id();
 $include = ['user', 'topics', 'is_following'];
@@ -23,9 +22,7 @@ $articles_following = $userId ? get_following_articles($userId, [
 
 $meta_title = '文章列表';
 ?>
-
 <?php include dirname(__FILE__) . "/../public/header.php"; ?>
-
 <?php if (!$userId): ?>
   <div id="page-articles" class="mdui-container">
     <div id="recent">
@@ -54,11 +51,9 @@ $meta_title = '文章列表';
     </button>
   </div>
 <?php endif; ?>
-
 <script>
   window.G_ARTICLES_RECENT = <?= json_encode($articles_recent) ?>;
   window.G_ARTICLES_POPULAR = <?= json_encode($articles_popular) ?>;
   window.G_ARTICLES_FOLLOWING = <?= $userId ? json_encode($articles_following) : 'null' ?>;
 </script>
-
 <?php include dirname(__FILE__) . "/../public/footer.php"; ?>

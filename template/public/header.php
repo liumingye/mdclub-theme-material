@@ -19,11 +19,10 @@
       )
     ?></title>
   <?php if ($NODE_ENV === 'production'): ?>
-  <link rel="stylesheet" href="<?= get_theme_static_url() ?>/index.c4d3bec3.css">
+  <link rel="stylesheet" href="<?= get_theme_static_url() ?>/index.b8ff90e2.css">
   <?php endif; ?>
 </head>
 <body class="mdui-drawer-body-left">
 <div class="mdui-appbar-with-toolbar mg-app">
-
 <?php if (!get_user_id()) include dirname(__FILE__) . '/appbar.php'; ?>
 <?php if (!get_user_id()) include dirname(__FILE__) . '/drawer.php'; ?>

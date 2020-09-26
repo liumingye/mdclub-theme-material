@@ -53,7 +53,7 @@ const Title = ({ content }) => (
   />
 );
 
-const Content = ({ snippet, updateTime, updateTimeDesc, replys }) => (
+const Content = ({ snippet, updateTime, updateTimeDesc, replys, topics}) => (
   <div class="content mdui-text-color-theme-secondary">
     <div
       class="snippet"
@@ -61,6 +61,13 @@ const Content = ({ snippet, updateTime, updateTimeDesc, replys }) => (
       onupdate={summaryText(snippet, 100)}
     />
     <div class="meta">
+      <If condition={topics && topics.length}>
+        <div class="topics">
+          {topics.map((topic) => (
+            <button class="mdui-btn mdui-btn-dense mdui-color-theme-accent mdui-ripple">{`${topic.name}`}</button>
+          ))}
+        </div>
+      </If>
       <div class="update_time" title={timeFormat(updateTime)}>
         {`${updateTimeDesc} ${timeFriendly(updateTime)}`}
       </div>
@@ -93,6 +100,7 @@ export const QuestionItem = ({ question, last_visit_id, tabName, actions }) => (
       updateTime={question.answer_time || question.create_time}
       updateTimeDesc={question.answer_time ? '回复于' : '发布于'}
       replys={`${question.answer_count} 个回答`}
+      topics={question.relationships.topics}
     />
   </Wrapper>
 );
@@ -121,6 +129,7 @@ export const ArticleItem = ({ article, last_visit_id, tabName, actions }) => (
       updateTime={article.create_time}
       updateTimeDesc="发布于"
       replys={`${article.comment_count} 条评论`}
+      topics={article.relationships.topics}
     />
   </Wrapper>
 );
